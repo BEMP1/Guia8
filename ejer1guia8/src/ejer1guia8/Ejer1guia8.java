@@ -1,6 +1,6 @@
 package ejer1guia8;
 
-import Servicio.SerPersona;
+import servicio.SerPersona;
 import clase.Persona;
 import java.util.ArrayList;
 
