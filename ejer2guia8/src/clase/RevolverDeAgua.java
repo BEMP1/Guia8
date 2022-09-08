@@ -31,7 +31,6 @@ public class RevolverDeAgua {
 
     public void llenarRevolver() {
         posicionActual = (int) Math.random() * 5 + 1;
-        posicionAgua = (int) Math.random() * 5 + 1;
     }
 
 }
