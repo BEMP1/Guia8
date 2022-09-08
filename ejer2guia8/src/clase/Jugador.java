@@ -1,5 +1,7 @@
 package clase;
 
+import java.util.Scanner;
+
 public class Jugador {
 
     public Integer id;
@@ -45,6 +47,16 @@ public class Jugador {
             mojado = true;
         }
         return mojado;
+    }
+
+    public Jugador creadorJugadores(int i) {
+        Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n");
+        Jugador jugador = new Jugador();
+        jugador.setId(i + 1);
+        System.out.println("Ingrese el nombre del jugador " + (i + 1));
+        jugador.setNombre(leer.next() + " jugador " + jugador.getId());
+        jugador.setMojado(false);
+        return jugador;
     }
 
 }
