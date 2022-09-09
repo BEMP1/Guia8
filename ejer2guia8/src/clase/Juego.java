@@ -37,6 +37,14 @@ public class Juego {
     }
 
     public void ronda() {
-
+        
+        
+        
     }
+
+    @Override
+    public String toString() {
+        return "Jugadores= " + Jugadores + ", Revolver= " + Revolver;
+    }
+    
 }

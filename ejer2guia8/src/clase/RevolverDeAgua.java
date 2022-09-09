@@ -55,7 +55,7 @@ public class RevolverDeAgua {
 
     @Override
     public String toString() {
-        return "Revolver De Agua " + "posicionActual=" + posicionActual + ", posicionAgua=" + posicionAgua + '}';
+        return "posicion actual=" + posicionActual + ", posicion del agua=" + posicionAgua;
     }
     
     

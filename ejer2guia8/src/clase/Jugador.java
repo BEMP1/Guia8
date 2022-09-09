@@ -59,4 +59,9 @@ public class Jugador {
         return jugador;
     }
 
+    @Override
+    public String toString() {
+        return Nombre;
+    }
+
 }
