@@ -37,14 +37,27 @@ public class Juego {
     }
 
     public void ronda() {
-        
-        
-        
+        boolean alguienMojado = false;
+        do {
+            for (Jugador Jugadore : Jugadores) {
+                Jugadore.setMojado(Revolver.mojar());
+                alguienMojado = Revolver.mojar();
+                if (alguienMojado) {
+                    break;
+                }
+                Revolver.siguienteChorro();
+            }
+        } while (!alguienMojado);
+        for (Jugador Jugadore : Jugadores) {
+            if (Jugadore.getMojado()) {
+                System.out.println(Jugadore + " fue mojado");
+            }
+        }
     }
 
     @Override
     public String toString() {
         return "Jugadores= " + Jugadores + ", Revolver= " + Revolver;
     }
-    
+
 }

@@ -25,8 +25,8 @@ public class Ejer2guia8 {
         }
         revolver.llenarRevolver();
         juego.llenarJuego(jugadores, revolver);
-        System.out.println(juego);
-        
+        juego.ronda();
+
     }
 
 }

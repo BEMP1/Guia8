@@ -44,12 +44,12 @@ public class RevolverDeAgua {
         }
         return mojado;
     }
-    
+
     public void siguienteChorro() {
-        if (posicionActual==6) {
-            posicionActual=1;
+        if (posicionActual == 6) {
+            posicionActual = 1;
         } else {
-            posicionActual=posicionActual+1;
+            posicionActual = posicionActual + 1;
         }
     }
 
@@ -57,7 +57,5 @@ public class RevolverDeAgua {
     public String toString() {
         return "posicion actual=" + posicionActual + ", posicion del agua=" + posicionAgua;
     }
-    
-    
 
 }
