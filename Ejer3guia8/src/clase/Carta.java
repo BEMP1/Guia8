@@ -1,5 +1,8 @@
 package clase;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Carta {
 
     public int numero;
@@ -88,5 +91,8 @@ public class Carta {
 
         }
         return carta;
+    }
+    public void barajar(ArrayList baraja) {
+        Collections.shuffle(baraja);
     }
 }

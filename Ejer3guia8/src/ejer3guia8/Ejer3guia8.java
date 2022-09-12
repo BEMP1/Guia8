@@ -8,14 +8,18 @@ public class Ejer3guia8 {
     public static void main(String[] args) {
         ArrayList<Carta> baraja = new ArrayList();
         Carta carta = new Carta();
+        int cartasRepartidas;
         for (int j = 0; j < 4; j++) {
             for (int i = 1; i < 11; i++) {
                 baraja.add(carta.crearBaraja(j, i));
             }
         }
-        for (Carta carta1 : baraja) {
-            System.out.println(carta1);
-        }
+        
+        carta.barajar(baraja);
+        
+        System.out.println(baraja.get(5));
+        
+
     }
 
 }
