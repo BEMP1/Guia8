@@ -92,7 +92,18 @@ public class Carta {
         }
         return carta;
     }
+
     public void barajar(ArrayList baraja) {
         Collections.shuffle(baraja);
+    }
+
+    public void siguienteCarta(ArrayList baraja, ArrayList barajadada) {
+        if (baraja.isEmpty()) {
+            System.out.println("No quedan mas cartas");
+        } else {
+            barajadada.add(baraja.get(1));
+            baraja.remove(1);
+        }
+
     }
 }
