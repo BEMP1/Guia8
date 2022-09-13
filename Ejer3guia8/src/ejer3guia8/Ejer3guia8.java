@@ -39,23 +39,31 @@ public class Ejer3guia8 {
                     carta.siguienteCarta(baraja, barajadada);
                     break;
                 case 3:
-                    System.out.println("");
+                    System.out.println("El numero de cartas que quedan es" + baraja.size());
                     break;
                 case 4:
-                    System.out.println("");
+                    carta.darCarta(baraja, barajadada);
                     break;
                 case 5:
-                    for (Carta carta1 : barajadada) {
-                        System.out.println(carta1);
+                    if (barajadada.isEmpty()) {
+                        System.out.println("No hay cartas en el monton");
+                    } else {
+                        for (Carta carta2 : barajadada) {
+                            System.out.println(carta2);
+                        }
                     }
                     break;
                 case 6:
-                    for (Carta carta1 : baraja) {
-                        System.out.println(carta1);
+                    if (baraja.isEmpty()) {
+                        System.out.println("No quedan cartas");
+                    } else {
+                        for (Carta carta1 : baraja) {
+                            System.out.println(carta1);
+                        }
                     }
                     break;
                 case 7:
-                    System.out.println("se salio con exito");
+                    System.out.println("Se salio con exito");
                     break;
                 default:
                     System.out.println("Numero no esta entre las opciones");
@@ -64,4 +72,3 @@ public class Ejer3guia8 {
         } while (eleccion != 7);
     }
 }
-    

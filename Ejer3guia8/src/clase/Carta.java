@@ -2,6 +2,7 @@ package clase;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class Carta {
 
@@ -34,7 +35,7 @@ public class Carta {
 
     @Override
     public String toString() {
-        return "Carta numero " + numero + ", palo " + palo + '}';
+        return "Carta numero " + numero + ", palo " + palo;
     }
 
     public Carta crearBaraja(int j, int i) {
@@ -101,9 +102,25 @@ public class Carta {
         if (baraja.isEmpty()) {
             System.out.println("No quedan mas cartas");
         } else {
-            barajadada.add(baraja.get(1));
-            baraja.remove(1);
+            System.out.println(baraja.get(0));
+            barajadada.add(baraja.get(0));
+            baraja.remove(0);
         }
 
+    }
+
+    public void darCarta(ArrayList baraja, ArrayList barajadada) {
+        Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n");
+        int cartasADar;
+        System.out.println("¿Cuantas cartas quiere dar?");
+        cartasADar = leer.nextInt();
+        if (cartasADar > baraja.size()) {
+            System.out.println("No hay tantas cartas");
+        } else {
+            for (int i = 0; i < cartasADar; i++) {
+                barajadada.add(baraja.get(0));
+                baraja.remove(0);
+            }
+        }
     }
 }
