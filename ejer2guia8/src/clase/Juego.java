@@ -1,6 +1,10 @@
 package clase;
 
+import java.net.URL;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.SourceDataLine;
 
 public class Juego {
 
@@ -40,11 +44,20 @@ public class Juego {
         boolean alguienMojado = false;
         do {
             for (Jugador Jugadore : Jugadores) {
+                System.out.println("Turno de " + Jugadore.getNombre());
                 Jugadore.setMojado(Revolver.mojar());
                 alguienMojado = Revolver.mojar();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    System.out.println(e);
+                }
                 if (alguienMojado) {
+                    System.out.println("BAM");
+                    java.awt.Toolkit.getDefaultToolkit().beep(); //solo funciona si el beep predeterminado es cambiado por un sonido de bala
                     break;
                 }
+                System.out.println("Click");
                 Revolver.siguienteChorro();
             }
         } while (!alguienMojado);
