@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="clase">
+  <ClassDiagramComponents>
+    <Class name="Carta" package="clase" visibility="public" xPosition="468.0" yPosition="37.0">
+      <Fields>
+        <Field name="numero" type="int" visibility="public"/>
+        <Field name="palo" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="numero"/>
+          <Argument type="String" name="palo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumero" returnType="int" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="int" name="numero"/>
+        </Method>
+        <Method name="getPalo" returnType="String" visibility="public"/>
+        <Method name="setPalo" returnType="void" visibility="public">
+          <Argument type="String" name="palo"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="crearBaraja" returnType="Carta" visibility="public">
+          <Argument type="int" name="j"/>
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="barajar" returnType="void" visibility="public">
+          <Argument type="ArrayList" name="baraja"/>
+        </Method>
+        <Method name="siguienteCarta" returnType="void" visibility="public">
+          <Argument type="ArrayList" name="baraja"/>
+          <Argument type="ArrayList" name="barajadada"/>
+        </Method>
+        <Method name="darCarta" returnType="void" visibility="public">
+          <Argument type="ArrayList" name="baraja"/>
+          <Argument type="ArrayList" name="barajadada"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="clase.Carta" target="clase.Carta" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

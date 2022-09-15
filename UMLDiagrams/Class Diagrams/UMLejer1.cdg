@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="clase">
+  <ClassDiagramComponents>
+    <Class name="Perro" package="clase" visibility="public" xPosition="770.0" yPosition="130.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="public"/>
+        <Field name="raza" type="String" visibility="public"/>
+        <Field name="edad" type="int" visibility="public"/>
+        <Field name="tamanometro" type="Double" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="raza"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="Double" name="tamanometro"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getRaza" returnType="String" visibility="public"/>
+        <Method name="setRaza" returnType="void" visibility="public">
+          <Argument type="String" name="raza"/>
+        </Method>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="getTamanometro" returnType="Double" visibility="public"/>
+        <Method name="setTamanometro" returnType="void" visibility="public">
+          <Argument type="Double" name="tamanometro"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="clase" visibility="public" xPosition="130.0" yPosition="102.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="public"/>
+        <Field name="apellido" type="String" visibility="public"/>
+        <Field name="edadanio" type="int" visibility="public"/>
+        <Field name="documento" type="int" visibility="public"/>
+        <Field name="perro" type="Perro" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="edadanio"/>
+          <Argument type="int" name="documento"/>
+          <Argument type="Perro" name="perro"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getEdadanio" returnType="int" visibility="public"/>
+        <Method name="setEdadanio" returnType="void" visibility="public">
+          <Argument type="int" name="edadanio"/>
+        </Method>
+        <Method name="getDocumento" returnType="int" visibility="public"/>
+        <Method name="setDocumento" returnType="void" visibility="public">
+          <Argument type="int" name="documento"/>
+        </Method>
+        <Method name="getPerro" returnType="Perro" visibility="public"/>
+        <Method name="setPerro" returnType="void" visibility="public">
+          <Argument type="Perro" name="perro"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="clase.Persona" target="clase.Perro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="perro" source="clase.Persona" target="clase.Perro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
