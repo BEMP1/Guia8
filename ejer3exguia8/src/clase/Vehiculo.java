@@ -9,19 +9,19 @@ public class Vehiculo {
     public String numMotor;
     public String chasis;
     public String color;
-    public String Tipo;
+    public String tipo;
 
     public Vehiculo() {
     }
 
-    public Vehiculo(String marca, String modelo, int anio, String numMotor, String chasis, String color, String Tipo) {
+    public Vehiculo(String marca, String modelo, int anio, String numMotor, String chasis, String color, String tipo) {
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
         this.numMotor = numMotor;
         this.chasis = chasis;
         this.color = color;
-        this.Tipo = Tipo;
+        this.tipo = tipo;
     }
 
     public String getMarca() {
@@ -73,11 +73,16 @@ public class Vehiculo {
     }
 
     public String getTipo() {
-        return Tipo;
+        return tipo;
     }
 
-    public void setTipo(String Tipo) {
-        this.Tipo = Tipo;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Marca=" + marca + ", modelo=" + modelo + ", año=" + anio + ", numero de motor=" + numMotor + ", chasis=" + chasis + ", color=" + color + ", tipo=" + tipo;
     }
     
     
