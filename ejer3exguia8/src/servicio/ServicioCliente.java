@@ -51,7 +51,7 @@ public class ServicioCliente {
                                 encontroCliente = true;
                             }
                         }
-                        if (encontroCliente = false) {
+                        if (!encontroCliente) {
                             System.out.println("No se encontro a un cliente con ese nombre");
                         }
                         break;
