@@ -61,7 +61,7 @@ public class ServicioCliente {
                     default:
                         System.out.println("Numero ingresado no es una opción");
                 }
-            } while (true);
+            } while (eleccion != 2);
         }
     }
 
