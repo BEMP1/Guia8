@@ -1,8 +1,7 @@
-
 package clase;
 
-
 public class Vehiculo {
+
     public String marca;
     public String modelo;
     public int anio;
@@ -84,7 +83,5 @@ public class Vehiculo {
     public String toString() {
         return "Marca=" + marca + ", modelo=" + modelo + ", año=" + anio + ", numero de motor=" + numMotor + ", chasis=" + chasis + ", color=" + color + ", tipo=" + tipo;
     }
-    
-    
-    
+
 }

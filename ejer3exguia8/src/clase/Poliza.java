@@ -1,8 +1,7 @@
-
 package clase;
 
-
 public class Poliza {
+
     public Cliente cliente;
     public Vehiculo vehiculo;
     public String numPoliza;
@@ -119,8 +118,5 @@ public class Poliza {
     public void setCobertura(String cobertura) {
         this.cobertura = cobertura;
     }
-    
-    
-    
-    
+
 }

@@ -8,15 +8,16 @@ import servicio.ServicioCliente;
 import servicio.ServicioVehiculo;
 
 public class Ejer3exguia8 {
-
+    
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n");
         ServicioCliente sercli = new ServicioCliente();
         ServicioVehiculo serveh = new ServicioVehiculo();
         ArrayList<Cliente> clientes = new ArrayList();
         ArrayList<Vehiculo> vehiculosSinVender = new ArrayList();
-        int cont; 
+        int cont;
         int eleccion;
+        
         do {
             System.out.println("[1] Ingresar cliente");
             System.out.println("[2] Ingresar vehiculo");
@@ -34,13 +35,17 @@ public class Ejer3exguia8 {
                     vehiculosSinVender.add(serveh.crearVehiculo());
                     break;
                 case 3:
-                    
+                    sercli.mostrarCliente(clientes);
                     break;
                 case 4:
-                    cont=0;
-                    for (Vehiculo vehiculo : vehiculosSinVender) {
-                        cont=cont+1;
-                        System.out.println("vehiculo " + cont + " " + vehiculo);
+                    if (vehiculosSinVender.isEmpty()) {
+                        System.out.println("Aun no se ingresan vehiculos");
+                    } else {
+                        cont = 0;
+                        for (Vehiculo vehiculo : vehiculosSinVender) {
+                            cont = cont + 1;
+                            System.out.println("vehiculo " + cont + " " + vehiculo);
+                        }
                     }
                     break;
                 case 5:
@@ -56,7 +61,7 @@ public class Ejer3exguia8 {
                     System.out.println("Numero ingresado no es una opción");
             }
         } while (eleccion != 7);
-
+        
     }
-
+    
 }

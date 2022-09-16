@@ -1,10 +1,9 @@
-
 package clase;
 
 import java.util.ArrayList;
 
-
 public class Cliente {
+
     public String nombreCompleto;
     public int documento;
     public String mail;
@@ -71,7 +70,10 @@ public class Cliente {
     public void setVehiculosPoseidos(ArrayList<Vehiculo> vehiculosPoseidos) {
         this.vehiculosPoseidos = vehiculosPoseidos;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return nombreCompleto + ", documento=" + documento + ", mail=" + mail + ", domicilio=" + domicilio + ", telefono=" + telefono;
+    }
+
 }
