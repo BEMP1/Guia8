@@ -20,6 +20,7 @@ public class ServicioCliente {
         cliente.setDomicilio(leer.next());
         System.out.println("Ingresar numero telefonico");
         cliente.setTelefono(leer.nextLong());
+        cliente.setVehiculosPoseidos(new ArrayList());
         return cliente;
     }
 
@@ -35,7 +36,7 @@ public class ServicioCliente {
                 int cont = 0;
                 for (Cliente cliente : clientes) {
                     cont = cont + 1;
-                    System.out.println("[" + cont + "] " + cliente);
+                    System.out.println(cliente);
                 }
                 System.out.println("[1] Mostrar vehiculos de cliente");
                 System.out.println("[2] Salir");
