@@ -8,7 +8,7 @@ import servicio.ServicioCliente;
 import servicio.ServicioVehiculo;
 
 public class Ejer3exguia8 {
-    
+
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n");
         ServicioCliente sercli = new ServicioCliente();
@@ -17,7 +17,7 @@ public class Ejer3exguia8 {
         ArrayList<Vehiculo> vehiculosSinVender = new ArrayList();
         int cont;
         int eleccion;
-        
+
         do {
             System.out.println("[1] Ingresar cliente");
             System.out.println("[2] Ingresar vehiculo");
@@ -26,8 +26,7 @@ public class Ejer3exguia8 {
             System.out.println("[5] Mostrar Clientes");
             System.out.println("[6] Mostrar vehiculos sin vender");
             System.out.println("[7] Asignar un vehiculo a un cliente");
-            System.out.println("[8] Crear poliza");
-            System.out.println("[9] Salir");
+            System.out.println("[8] Salir");
             eleccion = leer.nextInt();
             switch (eleccion) {
                 case 1:
@@ -60,16 +59,13 @@ public class Ejer3exguia8 {
                     sercli.asignarVehiculo(clientes, vehiculosSinVender);
                     break;
                 case 8:
-
-                    break;
-                case 9:
                     System.out.println("Se salio con exito");
                     break;
                 default:
                     System.out.println("Numero ingresado no es una opción");
             }
-        } while (eleccion != 9);
-        
+        } while (eleccion != 8);
+
     }
-    
+
 }

@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class ServicioCliente {
 
-    public ArrayList<Vehiculo> ListaVehiculos;
-
     public Cliente crearCliente() {
         Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n");
         Cliente cliente = new Cliente();
@@ -22,7 +20,7 @@ public class ServicioCliente {
         cliente.setDomicilio(leer.next());
         System.out.println("Ingresar numero telefonico");
         cliente.setTelefono(leer.nextLong());
-        cliente.setVehiculosPoseidos(ListaVehiculos);
+        cliente.setVehiculosPoseidos(new ArrayList());
         return cliente;
     }
 
@@ -140,7 +138,7 @@ public class ServicioCliente {
                     System.out.println("Ingrese numero de cliente");
                     numCliente = leer.nextInt() - 1;
                     if (clientes.get(numCliente) == null) {
-                        System.out.println("No se encontro a un cliente con ese nombre");
+                        System.out.println("No se encontro a ese cliente");
                     } else {
                         do {
                             cont = 1;
@@ -156,16 +154,10 @@ public class ServicioCliente {
                                     System.out.println("Ingrese numero de vehiculo");
                                     numVehiculo = leer.nextInt() - 1;
                                     if (vehiculos.get(numVehiculo) == null) {
-                                        System.out.println("No se encontro a un vehiculo con ese nombre");
+                                        System.out.println("No se encontro a ese vehiculo");
                                     } else {
-                                        ListaVehiculos = new ArrayList();
-                                        ListaVehiculos.add(vehiculos.get(numVehiculo));
-                                        if (!(clientes.get(numCliente).getVehiculosPoseidos() == null)) {
-                                            for (Vehiculo vehiculo : clientes.get(numCliente).getVehiculosPoseidos()) {
-                                                ListaVehiculos.add(vehiculo);
-                                            }
-                                        }
-                                        clientes.get(numCliente).setVehiculosPoseidos(ListaVehiculos);
+                                        clientes.get(numCliente).getVehiculosPoseidos().add(vehiculos.get(numVehiculo));
+                                        vehiculos.remove(numVehiculo);
                                     }
                                     break;
                                 case 2:
