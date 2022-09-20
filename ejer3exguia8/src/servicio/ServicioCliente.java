@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class ServicioCliente {
 
+    public ArrayList<Vehiculo> ListaVehiculos;
+
     public Cliente crearCliente() {
         Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n");
         Cliente cliente = new Cliente();
@@ -20,7 +22,7 @@ public class ServicioCliente {
         cliente.setDomicilio(leer.next());
         System.out.println("Ingresar numero telefonico");
         cliente.setTelefono(leer.nextLong());
-        cliente.setVehiculosPoseidos(new ArrayList());
+        cliente.setVehiculosPoseidos(ListaVehiculos);
         return cliente;
     }
 
@@ -31,8 +33,9 @@ public class ServicioCliente {
         if (clientes.isEmpty()) {
             System.out.println("Aun no hay clientes");
         } else {
-            int cont = 1;
+            int cont;
             do {
+                cont = 1;
                 for (Cliente cliente : clientes) {
                     System.out.println(cont + " " + cliente);
                     cont++;
@@ -77,8 +80,9 @@ public class ServicioCliente {
         if (clientes.isEmpty()) {
             System.out.println("Aun no hay clientes");
         } else {
-            int cont = 1;
+            int cont;
             do {
+                cont = 1;
                 for (Cliente cliente : clientes) {
                     System.out.println(cont + " " + cliente);
                     cont++;
@@ -123,12 +127,12 @@ public class ServicioCliente {
         int numCliente;
         int numVehiculo;
         do {
-            cont=1;
+            cont = 1;
             for (Cliente cliente : clientes) {
                 System.out.println(cont + " " + cliente);
                 cont++;
             }
-            System.out.println("[1] eliga cliente");
+            System.out.println("[1] Eliga cliente");
             System.out.println("[2] Salir");
             eleccion = leer.nextInt();
             switch (eleccion) {
@@ -139,12 +143,12 @@ public class ServicioCliente {
                         System.out.println("No se encontro a un cliente con ese nombre");
                     } else {
                         do {
-                            cont=1;
+                            cont = 1;
                             for (Vehiculo vehiculo : vehiculos) {
                                 System.out.println(cont + " " + vehiculo);
                                 cont++;
                             }
-                            System.out.println("[1] Remover vehiculo");
+                            System.out.println("[1] Eliga vehiculo");
                             System.out.println("[2] Salir");
                             eleccion = leer.nextInt();
                             switch (eleccion) {
@@ -154,7 +158,14 @@ public class ServicioCliente {
                                     if (vehiculos.get(numVehiculo) == null) {
                                         System.out.println("No se encontro a un vehiculo con ese nombre");
                                     } else {
-                                        vehiculos.remove(numVehiculo);
+                                        ListaVehiculos = new ArrayList();
+                                        ListaVehiculos.add(vehiculos.get(numVehiculo));
+                                        if (!(clientes.get(numCliente).getVehiculosPoseidos() == null)) {
+                                            for (Vehiculo vehiculo : clientes.get(numCliente).getVehiculosPoseidos()) {
+                                                ListaVehiculos.add(vehiculo);
+                                            }
+                                        }
+                                        clientes.get(numCliente).setVehiculosPoseidos(ListaVehiculos);
                                     }
                                     break;
                                 case 2:

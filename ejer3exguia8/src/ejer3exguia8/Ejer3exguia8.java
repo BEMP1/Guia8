@@ -60,7 +60,7 @@ public class Ejer3exguia8 {
                     sercli.asignarVehiculo(clientes, vehiculosSinVender);
                     break;
                 case 8:
-                    
+
                     break;
                 case 9:
                     System.out.println("Se salio con exito");

@@ -25,6 +25,7 @@ public class ServicioVehiculo {
         vehiculo.setTipo(leer.next());
         return vehiculo;
     }
+
     public void removerVehiculo(ArrayList<Vehiculo> vehiculos) {
         Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n");
         int eleccion;
@@ -32,8 +33,9 @@ public class ServicioVehiculo {
         if (vehiculos.isEmpty()) {
             System.out.println("Aun no hay vehiculos");
         } else {
-            int cont = 1;
+            int cont;
             do {
+                cont = 1;
                 for (Vehiculo vehiculo : vehiculos) {
                     System.out.println(cont + " " + vehiculo);
                     cont++;
